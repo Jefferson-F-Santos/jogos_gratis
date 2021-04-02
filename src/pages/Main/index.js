@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 
 import './style.css';
 import CardGame from '../../Components/CardGame'
 
-function Main() {
+function Main({ receiveGameId }) {
 
   const [gameData, setGameData] = useState([])
 
@@ -23,17 +22,16 @@ function Main() {
     return `${parts[2]}/${parts[1]}/${parts[0]}`
   }
 
-  if(gameData !== []){
+  if (gameData !== []) {
     return gameData.map((game) => (
-      <Link>
-        <CardGame
-          img={game.thumbnail}
-          name={game.title}
-          description={game.short_description}
-          genre={game.genre}
-          date={changeDateFormat(game.release_date)}
-        />
-      </Link>
+      <CardGame
+        img={game.thumbnail}
+        name={game.title}
+        description={game.short_description}
+        genre={game.genre}
+        date={changeDateFormat(game.release_date)}
+        showDetails={() => receiveGameId(game.id)}
+      />
     ))
   }
 }

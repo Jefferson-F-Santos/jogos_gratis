@@ -1,12 +1,12 @@
 import React from 'react';
 import './style.css';
 
-export default function CardGame({name, description, genre, date, img}){
-    return(
-        <div className="contCard">
+export default function CardGame({ name, description, genre, date, img, showDetails }) {
+    return (
+        <div className="contCard" onClick={() => showDetails()}>
 
             <div className="contImg">
-                <img src={img}/>
+                <img src={img} />
             </div>
 
             <div className="contInfo">
