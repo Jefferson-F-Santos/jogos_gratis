@@ -1,0 +1,41 @@
+.container{
+    width: 75%;
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: #252525;
+}
+
+.container .contConfig{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contTitleImg h2{
+    font-size: 1.8rem;
+    color: #e2e2e2;
+    margin: 0;
+    padding: 0;
+    line-height: 35px;
+}
+
+.contTitleImg .contImg{
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.contImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.contInfo p{
+    color: #c4c4c4;
+    font-size: 1.2rem;
+    line-height: 22px;
+}
+
