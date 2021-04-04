@@ -10,7 +10,13 @@ export default function GameDetails() {
     let { id } = useParams()
 
     const getGameDetails = () => {
-        fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`)
+        fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+                "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com"
+            }
+        })
             .then(res => res.json())
             .then(res => setGameData(res))
     }

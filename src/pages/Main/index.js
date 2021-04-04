@@ -8,8 +8,12 @@ function Main({ receiveGameId }) {
   const [gameData, setGameData] = useState([])
 
   const getGames = () => {
-    fetch("https://free-to-play-games-database.p.rapidapi.com/api/games", {
-      method: "GET"
+    fetch("https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=3d.mmorpg.fantasy.pvp&platform=pc", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+        "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com"
+      }
     })
       .then(res => res.json())
       .then(res => setGameData(res))
