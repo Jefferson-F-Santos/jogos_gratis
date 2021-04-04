@@ -10,7 +10,7 @@ export default function GameDetails() {
     let { id } = useParams()
 
     const getGameDetails = () => {
-        fetch(`https://www.freetogame.com/api/game?id=${id}`)
+        fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`)
             .then(res => res.json())
             .then(res => setGameData(res))
     }
@@ -40,7 +40,7 @@ export default function GameDetails() {
                 </div>
 
                 <div className="contConfig contCarousel">
-                    <CarouselImgsGames image={gameData.screenshots}/>
+                    <CarouselImgsGames image={gameData.screenshots} />
                 </div>
 
                 <div className="contConfig">
