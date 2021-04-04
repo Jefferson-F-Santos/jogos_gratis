@@ -8,7 +8,9 @@ function Main({ receiveGameId }) {
   const [gameData, setGameData] = useState([])
 
   const getGames = () => {
-    fetch("https://www.freetogame.com/api/games")
+    fetch("https://www.freetogame.com/api/games", {
+      method: "GET"
+    })
       .then(res => res.json())
       .then(res => setGameData(res))
   }
